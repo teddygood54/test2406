@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+
+<div class="container mx-auto p-4">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <h1 class="text-2xl mb-4">Appointment Booking</h1>
+        
+        <!-- Appointment Form -->
+        <form id="appointmentForm" onsubmit="submitForm(); return false;">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="patientName">
+                    Patient Name
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       id="patientName" type="text" placeholder="Enter patient's name" required>
+            </div>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="appointmentDate">
+                    Appointment Date
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                       id="appointmentDate" type="date" required>
+            </div>
+            
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                        type="submit">
+                    Submit
+                </button>
+            </div>
+        </form>
+        
+        <!-- Appointment Receipt -->
+        <div id="receiptContainer" class="hidden mt-4">
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <h1 class="text-2xl mb-4">Appointment Receipt</h1>
+                <div class="mb-4">
+                    <div class="flex justify-between">
+                        <span class="text-gray-700 text-sm font-bold">Patient Name:</span>
+                        <span id="receiptPatientName" class="text-gray-700"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-700 text-sm font-bold">Appointment Date:</span>
+                        <span id="receiptAppointmentDate" class="text-gray-700"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="static/scripts.js"></script>
+</body>
+</html>
